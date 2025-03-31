@@ -119,3 +119,10 @@ export async function getCurrentUser(): Promise<User | null> {
     const user = await getCurrentUser();
     return !!user;
   }
+
+
+  export async function signOut() {
+    const cookieStore = await cookies();
+  
+    cookieStore.delete("session");
+  }
